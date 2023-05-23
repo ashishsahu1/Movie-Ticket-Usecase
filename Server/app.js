@@ -3,17 +3,18 @@ import mongoose from "mongoose";
 
 import router from "./routes/user-routes";
 
+// Setting up environment for mongodb url
+import * as dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
 
 // middleware
-app.use(express.json())
+app.use(express.json());
 app.use("/api/user", router);
 
-// 0AH4jVuHYNJBejvG
 mongoose
-  .connect(
-    "mongodb+srv://admin:0AH4jVuHYNJBejvG@moviecluster0.zjn0wcw.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     app.listen(5000);
   })
