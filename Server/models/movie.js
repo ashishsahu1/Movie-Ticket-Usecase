@@ -15,6 +15,10 @@ const movieSchema = new Schema({
     type: Number,
     required: true,
   },
+  quantity: {
+    type: Number,
+    required: true,
+  },
 });
 
 export default mongoose.model("Movie", movieSchema);

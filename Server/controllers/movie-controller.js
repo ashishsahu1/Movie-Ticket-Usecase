@@ -14,7 +14,7 @@ export const getAllMovies = async (req, res, next) => {
 };
 
 export const addMovies = async (req, res, next) => {
-  const { moviename, movieposter, price } = req.body;
+  const { moviename, movieposter, price, quantity } = req.body;
   let existingMovie;
   try {
     existingMovie = await Movie.findOne({ moviename });
@@ -31,6 +31,7 @@ export const addMovies = async (req, res, next) => {
     moviename,
     movieposter,
     price,
+    quantity,
   });
 
   try {

@@ -48,6 +48,13 @@ export const addBooking = async (req, res, next) => {
       return console.log(err);
     }
 
+    movie.quantity = movie.quantity-tickets;
+    try{
+      await movie.save();
+    }catch(err){
+      return console.log(err);
+    }
+
     user.bookings.push(booking);
     try {
       await user.save();
