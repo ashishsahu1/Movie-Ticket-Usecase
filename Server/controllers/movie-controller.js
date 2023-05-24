@@ -58,3 +58,22 @@ export const searchMovies = async (req, res, next) => {
 
   res.status(200).json({ myData });
 };
+
+export const deleteMovie = async (req, res, next) => {
+  const movieId = req.params.id;
+
+  try {
+    // Find the movie by ID and remove it
+    const deletedMovie = await Movie.findByIdAndRemove(movieId);
+
+    if (!deletedMovie) {
+      return res.status(404).json({ error: "Movie not found" });
+    }
+
+    res.status(200).json({ message: "Movie deleted successfully" });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "An error occurred while deleting the movie" });
+  }
+};
