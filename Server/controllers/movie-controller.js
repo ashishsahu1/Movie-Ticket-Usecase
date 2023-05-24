@@ -40,3 +40,21 @@ export const addMovies = async (req, res, next) => {
   }
   return res.status(201).json({ movie });
 };
+
+export const searchMovies = async (req, res, next) => {
+  const moviename = req.query.term;
+  const queryObj = {};
+
+  if (moviename) {
+    queryObj.moviename = { $regex: moviename, $options: "i" };
+  }
+
+  let myData = {};
+  try {
+    myData = await Movie.find(queryObj);
+  } catch (err) {
+    return console.log(err);
+  }
+
+  res.status(200).json({ myData });
+};
