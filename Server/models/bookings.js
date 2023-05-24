@@ -13,6 +13,10 @@ const bookingSchema = new Schema({
     ref:"Movie",
     required:true,
   },
+  tickets:{
+    type:Number,
+    required:true,
+  }
 });
 
 export default mongoose.model("Booking", bookingSchema);

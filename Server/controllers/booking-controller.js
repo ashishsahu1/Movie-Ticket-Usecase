@@ -17,7 +17,7 @@ export const getAllbookings = async (req, res, next) => {
 };
 
 export const addBooking = async (req, res, next) => {
-  const { userId, movieId } = req.body;
+  const { userId, movieId, tickets } = req.body;
 
   try {
     // Find the user by ID
@@ -39,6 +39,7 @@ export const addBooking = async (req, res, next) => {
     const booking = new Booking({
       user,
       movie,
+      tickets,
     });
 
     try {
