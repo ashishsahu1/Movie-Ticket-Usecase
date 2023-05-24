@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-
-import router from "./routes/user-routes";
+import movierouter from "./routes/movie-routes";
+import userrouter from "./routes/user-routes";
 
 // Setting up environment for mongodb url
 import * as dotenv from "dotenv";
@@ -11,7 +11,8 @@ const app = express();
 
 // middleware
 app.use(express.json());
-app.use("/api/user", router);
+app.use("/api/user", userrouter);
+app.use("/api/movie", movierouter);
 
 mongoose
   .connect(process.env.MONGODB_URL)
