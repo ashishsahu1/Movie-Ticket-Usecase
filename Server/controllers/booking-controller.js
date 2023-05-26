@@ -48,10 +48,10 @@ export const addBooking = async (req, res, next) => {
       return console.log(err);
     }
 
-    movie.quantity = movie.quantity-tickets;
-    try{
+    movie.quantity = movie.quantity - tickets;
+    try {
       await movie.save();
-    }catch(err){
+    } catch (err) {
       return console.log(err);
     }
 
