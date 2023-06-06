@@ -1,13 +1,6 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="overflow: hidden;">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Slide 1" style="animation: slide 20s infinite;">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.pexels.com/photos/269140/pexels-photo-269140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Slide 2" style="animation: slide 20s infinite;">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Slide 3" style="animation: slide 20s infinite;">
-        </div>
+<section class="hero-section">
+    <div class="slider" [style.transform]="'translateX(' + (-currentSlideIndex * 100) + '%)'">
+        <img *ngFor="let image of images" [src]="image" alt="Slide Image">
     </div>
-</div>
+    <div class="banner__overlay"></div>
+</section>
