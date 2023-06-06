@@ -16,6 +16,8 @@ app.use("/api/user", userrouter);
 app.use("/api/movie", movierouter);
 app.use("/api/booking", bookingrouter);
 
+
+
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => {
