@@ -1,0 +1,45 @@
+.Ttl {
+    font-weight: 600;
+    color: #FD8815;
+    text-transform: uppercase;
+}
+
+/* .hdd {
+    color: #6D3EFE;
+
+}
+
+.hdd span {
+    color: #FD8815;
+} */
+
+.Dsc {
+    font-weight: 200;
+}
+
+.btn {
+    font-weight: 600;
+}
+
+.cardd {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: none;
+    position: relative;
+}
+
+.cardd:before {
+    content: "";
+    position: absolute;
+    border-radius: 500px;
+    top: 70px;
+    left: 50px;
+    right: 10px;
+    bottom: 70px;
+    filter: blur(25px);
+   background-color: rgba(72, 0, 241, 0.21);
+    z-index: -1;
+}
+
+
+

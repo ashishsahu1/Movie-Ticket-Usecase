@@ -9,6 +9,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { LandingComponent } from './Pages/landing/landing.component';
 import { HeroComponent } from './Components/hero/hero.component';
+import { MovieListComponent } from './Components/movie-list/movie-list.component';
+import { MovieCardComponent } from './Components/movie-card/movie-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HeroComponent } from './Components/hero/hero.component';
     NavbarComponent,
     FooterComponent,
     LandingComponent,
-    HeroComponent
+    HeroComponent,
+    MovieListComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
