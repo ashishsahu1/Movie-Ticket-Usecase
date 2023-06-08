@@ -11,6 +11,8 @@ import { LandingComponent } from './Pages/landing/landing.component';
 import { HeroComponent } from './Components/hero/hero.component';
 import { MovieListComponent } from './Components/movie-list/movie-list.component';
 import { MovieCardComponent } from './Components/movie-card/movie-card.component';
+import { LoginComponent } from './Components/login/login.component';
+import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MovieCardComponent } from './Components/movie-card/movie-card.component
     LandingComponent,
     HeroComponent,
     MovieListComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
