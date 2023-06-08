@@ -17,7 +17,7 @@ export const getAllbookings = async (req, res, next) => {
 };
 
 export const addBooking = async (req, res, next) => {
-  const { userId, movieId, tickets } = req.body;
+  const { userId, movieId, tickets,seatsbooked } = req.body;
 
   try {
     // Find the user by ID
@@ -49,6 +49,9 @@ export const addBooking = async (req, res, next) => {
     }
 
     movie.quantity = movie.quantity - tickets;
+    for (let i = 0; i < seatsbooked.length; i++) {
+      movie.seats[seatsbooked[i]] = true;      
+    }
     try {
       await movie.save();
     } catch (err) {

@@ -14,7 +14,7 @@ export const getAllMovies = async (req, res, next) => {
 };
 
 export const addMovies = async (req, res, next) => {
-  const { moviename, movieposter, price, quantity } = req.body;
+  const { moviename,moviedesc, movieposter, price, quantity } = req.body;
   let existingMovie;
   try {
     existingMovie = await Movie.findOne({ moviename });
@@ -27,11 +27,18 @@ export const addMovies = async (req, res, next) => {
       message: "Movie already Exists",
     });
   }
+
+
+  const seats = Array(quantity).fill(false).map((value) => value);
+
+
   const movie = new Movie({
     moviename,
+    moviedesc,
     movieposter,
     price,
     quantity,
+    seats
   });
 
   try {

@@ -7,6 +7,10 @@ const movieSchema = new Schema({
     type: String,
     required: true,
   },
+  moviedesc: {
+    type: String,
+    required: true,
+  },
   movieposter: {
     type: String,
     required: true,
@@ -17,6 +21,10 @@ const movieSchema = new Schema({
   },
   quantity: {
     type: Number,
+    required: true,
+  },
+  seats: {
+    type: [Boolean],
     required: true,
   },
 });
