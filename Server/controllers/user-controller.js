@@ -43,10 +43,12 @@ export const signup = async (req, res, next) => {
     });
   }
   const hashedPassword = bcrypt.hashSync(password);
+  const isadmin = false;
   const user = new User({
     name,
     email,
     password: hashedPassword,
+    isadmin,
     bookings: [],
   });
 
