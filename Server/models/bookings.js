@@ -16,6 +16,10 @@ const bookingSchema = new Schema({
   tickets:{
     type:Number,
     required:true,
+  },
+  seatsbooked:{
+    type:[Number],
+    required:true,
   }
 });
 

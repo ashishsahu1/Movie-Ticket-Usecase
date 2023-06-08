@@ -40,6 +40,7 @@ export const addBooking = async (req, res, next) => {
       user,
       movie,
       tickets,
+      seatsbooked,
     });
 
     try {
