@@ -1,6 +1,9 @@
 <nav class="navbar bg-dark border-bottom border-bottom-dark">
-    <form class="container-fluid justify-content-center">
-        <a href="/moviepanel" class="btn btn-outline-light me-2" type="button">Movie Panel</a>
-        <a href="/userpanel" class="btn btn-outline-light me-2" type="button">User Panel</a>
+    <form class="container-fluid justify-content-between">
+        <div>
+            <a href="/moviepanel" class="btn btn-outline-light me-2" type="button">Movie Panel</a>
+            <a href="/userpanel" class="btn btn-outline-light me-2" type="button">User Panel</a>
+        </div>
+        <a (click)="logoutHandler()" class="btn btn-outline-light me-2" type="button">Logout</a>
     </form>
 </nav>

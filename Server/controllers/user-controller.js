@@ -83,9 +83,10 @@ export const login = async (req, res, next) => {
   }
 
   const token = generateToken(existingUser);
+  const expiresin = 900;
   return res
     .status(200)
-    .json({ message: "Login success", existingUser, token });
+    .json({ message: "Login success", existingUser, token ,expiresin});
 };
 
 // ----------- Admin APIs -----------
@@ -117,7 +118,8 @@ export const adminlogin = async (req, res, next) => {
   }
 
   const token = generateToken(existingUser);
+  const expiresin = 900;
   return res
     .status(200)
-    .json({ message: "Login success", existingUser, token });
+    .json({ message: "Login success", existingUser, token ,expiresin});
 };

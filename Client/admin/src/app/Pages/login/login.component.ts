@@ -13,6 +13,7 @@ export class LoginComponent {
     email: '',
     password: ''
   };
+  private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient, private router:Router) { }
 
@@ -24,7 +25,20 @@ export class LoginComponent {
             // Handle successful login
             console.log(response);
             localStorage.setItem("token",response.token)
-            localStorage.setItem("user",response.existingUser)
+            localStorage.setItem("user",response.existingUser.name)
+
+
+            // Handling timer
+            //Calculate the token expiration time
+            const expirationDate = new Date(new Date().getTime() + response.expiresin * 1000);
+
+            // Set a timer to automatically log out the user when the token expires
+            this.tokenExpirationTimer = setTimeout(() => {
+              this.logout();
+            }, response.expiresin * 1000);
+
+            // --------------------------
+            
             alert("Login Success")
             this.router.navigate(['/moviepanel'])
           },
@@ -34,5 +48,12 @@ export class LoginComponent {
           }
         }
       );
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+
+    this.router.navigate(['/']);
   }
 }

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./movie-panel.component.css']
 })
 export class MoviePanelComponent {
-
+  username = localStorage.getItem("user");
 }
