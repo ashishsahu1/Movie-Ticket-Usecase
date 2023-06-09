@@ -10,6 +10,7 @@ import { UserformComponent } from './Components/userform/userform.component';
 import { MovieformComponent } from './Components/movieform/movieform.component';
 import { MovieTableComponent } from './Components/movie-table/movie-table.component';
 import { UserTableComponent } from './Components/user-table/user-table.component';
+import { LoginComponent } from './Pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserTableComponent } from './Components/user-table/user-table.component
     UserformComponent,
     MovieformComponent,
     MovieTableComponent,
-    UserTableComponent
+    UserTableComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
