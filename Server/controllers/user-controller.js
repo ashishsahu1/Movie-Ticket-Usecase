@@ -83,5 +83,41 @@ export const login = async (req, res, next) => {
   }
 
   const token = generateToken(existingUser);
-  return res.status(200).json({ message: "Login success",existingUser, token });
+  return res
+    .status(200)
+    .json({ message: "Login success", existingUser, token });
+};
+
+// ----------- Admin APIs -----------
+
+export const adminlogin = async (req, res, next) => {
+  const { email, password } = req.body;
+  let existingUser;
+  try {
+    existingUser = await User.findOne({ email });
+  } catch (err) {
+    return console.log(err);
+  }
+  if (!existingUser) {
+    return res
+      .status(404)
+      .json({ message: "Couldn't Find User By This Email" });
+  }
+
+  if (existingUser.isadmin == false) {
+    return res
+      .status(401)
+      .json({ message: "User doesn't have admin permission" });
+  }
+
+  const isPasswordCorrect = bcrypt.compareSync(password, existingUser.password);
+  console.log(bcrypt.decodeBase64(password));
+  if (!isPasswordCorrect) {
+    return res.status(400).json({ message: "Incorrect password" });
+  }
+
+  const token = generateToken(existingUser);
+  return res
+    .status(200)
+    .json({ message: "Login success", existingUser, token });
 };
