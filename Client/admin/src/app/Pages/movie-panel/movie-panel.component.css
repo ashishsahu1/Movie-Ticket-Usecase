@@ -1,0 +1,13 @@
+.dash {
+    padding: 2rem 5rem;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    background-color: #c0acfe;
+}
+
+.all {
+    background-color: #fad5af;
+    padding-bottom: 2rem;
+}
