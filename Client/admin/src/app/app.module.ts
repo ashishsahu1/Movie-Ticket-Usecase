@@ -11,6 +11,8 @@ import { MovieformComponent } from './Components/movieform/movieform.component';
 import { MovieTableComponent } from './Components/movie-table/movie-table.component';
 import { UserTableComponent } from './Components/user-table/user-table.component';
 import { LoginComponent } from './Pages/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { LoginComponent } from './Pages/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,18 @@
 <div class="d-flex parent">
     <section class="container-sm bx">
         <h2>Admin Login</h2>
-        <form>
+        <p>Only User flagged as admin can login in this portal. An admin user can manage both user as well as movies together in friendly and tabulation format. </p>
+        <form (ngSubmit)="loginHandler()">
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                <input name="email" [(ngModel)]="loginData.email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
                 
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password">
+                <input name="password" [(ngModel)]="loginData.password" type="password" class="form-control" id="password">
             </div>
-            <button type="submit" class="btn btn-primary">Admin Login</button>
+            <button type="submit" class="btn btn-dark">Admin Login</button>
         </form>
     </section>
 </div>
