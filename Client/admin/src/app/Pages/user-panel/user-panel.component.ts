@@ -20,6 +20,13 @@ export class UserPanelComponent {
     this.user$ = this.http.get("http://localhost:5000/api/user");
    }
 
+   refreshTargetComponent() {
+    setTimeout(()=>{
+      this.ngOnInit();
+    }, 2000)
+    
+  }
+
   ngOnInit():void{
     this.http.get("http://localhost:5000/api/user").subscribe({
       next: response=>{

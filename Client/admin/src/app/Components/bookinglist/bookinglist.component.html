@@ -1,5 +1,6 @@
-<ul>
-    <li *ngFor="let books of bookinglist">
-        {{books}}
+<ul class="d-flex flex-wrap" *ngFor="let booking of allTickets">
+    <li class="m-1 ps-2 pe-2 " *ngFor="let book of booking" >
+        {{book}}
     </li>
+    <hr>
 </ul>

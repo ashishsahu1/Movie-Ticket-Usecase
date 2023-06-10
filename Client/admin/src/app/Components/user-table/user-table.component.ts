@@ -8,8 +8,10 @@ import { response } from 'express';
 })
 export class UserTableComponent {
   @Input() allUser:any; 
+  ngOnInit() {}
 
-  ngOnInit(){
-    
+  refreshTargetComponent() {
+    this.ngOnInit();
   }
-}
+
+}  

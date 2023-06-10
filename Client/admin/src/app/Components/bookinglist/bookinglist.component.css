@@ -1,0 +1,13 @@
+ul{
+    list-style-type: none;
+
+}
+
+li{
+    /* background-color: #c0acfe; */
+    border-radius: 20px;
+    border-color: #c0acfe;
+    border-width: 2px;
+    border-style: double;
+}
+
