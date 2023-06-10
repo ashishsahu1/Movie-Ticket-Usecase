@@ -123,3 +123,6 @@ export const adminlogin = async (req, res, next) => {
     .status(200)
     .json({ message: "Login success", existingUser, token ,expiresin});
 };
+
+
+// ************* HELPER APIS ***************

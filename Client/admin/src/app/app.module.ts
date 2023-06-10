@@ -13,6 +13,8 @@ import { UserTableComponent } from './Components/user-table/user-table.component
 import { LoginComponent } from './Pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserActionsComponent } from './Components/user-actions/user-actions.component';
+import { BookinglistComponent } from './Components/bookinglist/bookinglist.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     MovieformComponent,
     MovieTableComponent,
     UserTableComponent,
-    LoginComponent
+    LoginComponent,
+    UserActionsComponent,
+    BookinglistComponent
   ],
   imports: [
     BrowserModule,

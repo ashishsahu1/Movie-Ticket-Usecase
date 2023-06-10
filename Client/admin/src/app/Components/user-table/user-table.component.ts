@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { response } from 'express';
 
 @Component({
   selector: 'app-user-table',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-table.component.css']
 })
 export class UserTableComponent {
+  @Input() allUser:any; 
 
+  ngOnInit(){
+    
+  }
 }
