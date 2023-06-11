@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input,Output } from '@angular/core';
 import { response } from 'express';
 
 @Component({
@@ -8,10 +8,18 @@ import { response } from 'express';
 })
 export class UserTableComponent {
   @Input() allUser:any; 
+  @Output() buttonClicked: EventEmitter<void> = new EventEmitter<void>();
+
+  handleButtonClick(){
+    this.buttonClicked.emit();  
+  }
+
   ngOnInit() {}
 
-  refreshTargetComponent() {
-    this.ngOnInit();
+  refreshTargetTable() {
+    setTimeout(()=>{
+      this.ngOnInit();
+    }, 2000)
   }
 
 }  

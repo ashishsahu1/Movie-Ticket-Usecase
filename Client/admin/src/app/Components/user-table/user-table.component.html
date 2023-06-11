@@ -14,7 +14,7 @@
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
             <td><app-bookinglist [bookinglist]="user.bookings"/></td>
-            <td><app-user-actions/></td>
+            <td><app-user-action-list (buttonClicked)="handleButtonClick()" (refreshTable)="refreshTargetTable()" [userId]="user._id"/></td>
         </tr>
         
     </tbody>

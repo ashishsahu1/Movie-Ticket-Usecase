@@ -28,6 +28,7 @@ export class UserformComponent {
         console.log(error);
       }
     })
+    
     this.refreshComponent.emit();
   }
 }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { response } from 'express';
 
 @Component({
   selector: 'app-user-action-list',
@@ -7,4 +9,28 @@ import { Component } from '@angular/core';
 })
 export class UserActionListComponent {
 
+  @Output() refreshTable: EventEmitter<void> = new EventEmitter<void>();
+  @Input() userId = '';
+  @Output() buttonClicked: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(private http: HttpClient) { }
+
+  
+
+  delBtnHandler(){
+    console.log(this.userId);
+    const url = `http://localhost:5000/api/user/${this.userId}`;
+    this.http.delete(url).subscribe(
+      {
+        next:response=>{
+          alert('Item deleted Successfully')
+        },
+        error:error=>{
+          console.log(error);
+        }
+      }
+    )
+    this.refreshTable.emit();
+    this.buttonClicked.emit();
+  }
 }

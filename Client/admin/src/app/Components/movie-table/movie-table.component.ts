@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movie-table',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./movie-table.component.css']
 })
 export class MovieTableComponent {
-
+  @Input() allMovie = '';
 }

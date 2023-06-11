@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { response } from 'express';
 import { Observable } from 'rxjs';
+import { UserTableComponent } from 'src/app/Components/user-table/user-table.component';
 
 @Component({
   selector: 'app-user-panel',
@@ -11,28 +12,38 @@ import { Observable } from 'rxjs';
 })
 export class UserPanelComponent {
   username = localStorage.getItem("user");
+  @ViewChild(UserTableComponent) userTables!: UserTableComponent;
 
-  allUsers:any = [];
+  allUsers: any = [];
 
-  user$: Observable<any> | undefined;
+  constructor(private http: HttpClient, private router: Router) {
 
-  constructor(private http: HttpClient, private router:Router) {
-    this.user$ = this.http.get("http://localhost:5000/api/user");
-   }
-
-   refreshTargetComponent() {
-    setTimeout(()=>{
-      this.ngOnInit();
-    }, 2000)
-    
   }
 
-  ngOnInit():void{
+  ngAfterViewInit(): void {
+    if (this.userTables) {
+      this.userTables.buttonClicked.subscribe(() => {
+        setTimeout(() => {
+          this.ngOnInit();
+        }, 2000)
+      });
+    }
+  }
+
+
+  refreshTargetComponent() {
+    setTimeout(() => {
+      this.ngOnInit();
+    }, 2000)
+
+  }
+
+  ngOnInit(): void {
     this.http.get("http://localhost:5000/api/user").subscribe({
-      next: response=>{
+      next: response => {
         this.allUsers = response;
       },
-      error:error=>{
+      error: error => {
         console.log(error);
       }
     })
