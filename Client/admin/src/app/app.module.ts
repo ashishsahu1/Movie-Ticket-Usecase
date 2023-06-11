@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserActionsComponent } from './Components/user-actions/user-actions.component';
 import { BookinglistComponent } from './Components/bookinglist/bookinglist.component';
+import { UserActionListComponent } from './Components/user-action-list/user-action-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BookinglistComponent } from './Components/bookinglist/bookinglist.compo
     UserTableComponent,
     LoginComponent,
     UserActionsComponent,
-    BookinglistComponent
+    BookinglistComponent,
+    UserActionListComponent
   ],
   imports: [
     BrowserModule,

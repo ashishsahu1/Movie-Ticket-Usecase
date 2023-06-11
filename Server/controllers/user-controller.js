@@ -125,3 +125,21 @@ export const adminlogin = async (req, res, next) => {
 };
 
 // ************* HELPER APIS ***************
+
+export const deleteUser = async (req, res, next) => {
+  const userId = req.params.id;
+
+  try {
+    const deletedUser = await User.findByIdAndRemove(userId);
+
+    if (!deletedUser) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json({ message: "User deleted Successfully" });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: "An error occurred while deleting the user" });
+  }
+};
