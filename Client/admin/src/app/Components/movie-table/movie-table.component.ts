@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-movie-table',
@@ -8,6 +8,21 @@ import { Component, Input, ViewChild } from '@angular/core';
 export class MovieTableComponent {
   @Input() allMovie:any;
   modalImageUrl: string = "";
+  @Output() buttonClicked: EventEmitter<void> = new EventEmitter<void>();
+
+  handleButtonClick(){
+    this.buttonClicked.emit();
+  }
+
+  ngOnInit(){
+    
+  }
+
+  refreshTargetMovieTable(){
+    setTimeout(()=>{
+      this.ngOnInit();
+    }, 2000)
+  }
   
   openModal(imageUrl: string) {
     this.modalImageUrl = imageUrl;

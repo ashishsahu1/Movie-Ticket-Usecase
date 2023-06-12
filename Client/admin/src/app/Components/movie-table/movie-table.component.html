@@ -6,7 +6,7 @@
                 <th scope="col">Movie Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Poster</th>
-                <th scope="col">Price</th>
+                <th scope="col">Price(₹)</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Seats</th>
                 <th scope="col">Actions</th>
@@ -23,7 +23,7 @@
                     </div>
 
                 </td>    
-                <td>{{movie.price}}</td>
+                <td>₹{{movie.price}}</td>
                 <td>{{movie.quantity}}</td>
                 <td >
                     <div class="d-flex flex-wrap">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </td>
-                <td><app-movie-action-list/></td>
+                <td><app-movie-action-list (refreshMovieTable)="refreshTargetMovieTable()" (buttonClicked)="handleButtonClick()" [movieId]="movie._id"/></td>
             </tr>
     
         </tbody>

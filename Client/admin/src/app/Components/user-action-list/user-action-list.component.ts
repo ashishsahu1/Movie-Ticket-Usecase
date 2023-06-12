@@ -23,7 +23,7 @@ export class UserActionListComponent {
     this.http.delete(url).subscribe(
       {
         next:response=>{
-          alert('Item deleted Successfully')
+          alert(`UserId ${this.userId} deleted Successfully`)
         },
         error:error=>{
           console.log(error);
