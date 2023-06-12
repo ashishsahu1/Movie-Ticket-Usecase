@@ -19,6 +19,7 @@ export class UserTableComponent {
   refreshTargetTable() {
     setTimeout(()=>{
       this.ngOnInit();
+      console.log("Timers end")
     }, 2000)
   }
 
