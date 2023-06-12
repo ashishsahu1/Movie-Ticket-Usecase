@@ -15,12 +15,18 @@ export class MoviePanelComponent {
   ngOnInit(): void {
     this.http.get("http://localhost:5000/api/movie").subscribe({
       next: response => {
+        console.log(response)
         this.allMovie = response;
       },
       error: error => {
         console.log(error);
       }
     })
+    console.log(this.allMovie);
+  }
+
+  btnHnd(){
+    console.log(this.allMovie);
   }
 
 }

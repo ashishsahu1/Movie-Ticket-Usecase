@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./movie-table.component.css']
 })
 export class MovieTableComponent {
-  @Input() allMovie = '';
+  @Input() allMovie:any;
 }
