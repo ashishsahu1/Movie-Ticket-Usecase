@@ -12,6 +12,12 @@ export class MoviePanelComponent {
   allMovie:any=[];
   constructor(private http: HttpClient, private router: Router) {}
   
+  refreshTargetComponent() {
+    setTimeout(() => {
+      this.ngOnInit();
+    }, 2000)
+  }
+
   ngOnInit(): void {
     this.http.get("http://localhost:5000/api/movie").subscribe({
       next: response => {

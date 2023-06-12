@@ -32,8 +32,8 @@ const authenticateToken = (req, res, next) => {
 };
 
 movierouter.get("/", getAllMovies);
-movierouter.post("/addmovie", authenticateToken, addMovies);
-movierouter.get("/search", authenticateToken, searchMovies);
-movierouter.delete("/:id", authenticateToken, deleteMovie);
+movierouter.post("/addmovie", addMovies);
+movierouter.get("/search", searchMovies);
+movierouter.delete("/:id", deleteMovie);
 
 export default movierouter;
