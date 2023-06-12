@@ -5,3 +5,19 @@
     border-radius: 20px;
     margin-top: 2rem;
 }
+
+.seats{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(17, 181, 126);
+    margin: 2px;
+    border-radius: 3px;
+}
+
+.seats-red {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(216, 53, 53);
+    margin: 2px;
+    border-radius: 3px;
+}

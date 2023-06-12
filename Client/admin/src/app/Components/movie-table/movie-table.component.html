@@ -17,14 +17,27 @@
                 <th scope="row">{{i}}</th>
                 <td>{{movie.moviename}}</td>
                 <td>{{movie.moviedesc}}</td>
-                <td><a href="http://">Poster</a></td>
+                <td>
+                    <div>
+                        <img [src]="movie.movieposter" width="120" alt="" srcset="">
+                    </div>
+
+                </td>    
                 <td>{{movie.price}}</td>
                 <td>{{movie.quantity}}</td>
-                <td>Seats</td>
-                <td>XX</td>
-                <!-- <td><app-bookinglist [bookinglist]="user.bookings" /></td> -->
-                <!-- <td><app-user-action-list (buttonClicked)="handleButtonClick()" (refreshTable)="refreshTargetTable()" [userId]="user._id" /></td> -->
-
+                <td >
+                    <div class="d-flex flex-wrap">
+                        <div *ngFor="let seat of movie.seats;index as i;">
+                            <div *ngIf="seat == true; else elseBlock">
+                                <div class="seats-red"></div>
+                            </div>
+                            <ng-template #elseBlock>
+                                <div class="seats"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </td>
+                <td><app-movie-action-list/></td>
             </tr>
     
         </tbody>

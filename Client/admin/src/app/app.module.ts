@@ -13,9 +13,10 @@ import { UserTableComponent } from './Components/user-table/user-table.component
 import { LoginComponent } from './Pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { UserActionsComponent } from './Components/user-actions/user-actions.component';
 import { BookinglistComponent } from './Components/bookinglist/bookinglist.component';
 import { UserActionListComponent } from './Components/user-action-list/user-action-list.component';
+import { MovieActionListComponent } from './Components/movie-action-list/movie-action-list.component';
+
 
 @NgModule({
   declarations: [
@@ -28,9 +29,9 @@ import { UserActionListComponent } from './Components/user-action-list/user-acti
     MovieTableComponent,
     UserTableComponent,
     LoginComponent,
-    UserActionsComponent,
     BookinglistComponent,
-    UserActionListComponent
+    UserActionListComponent,
+    MovieActionListComponent,
   ],
   imports: [
     BrowserModule,

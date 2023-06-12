@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-movie-table',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class MovieTableComponent {
   @Input() allMovie:any;
+  modalImageUrl: string = "";
+  
+  openModal(imageUrl: string) {
+    this.modalImageUrl = imageUrl;
+  }
 }
