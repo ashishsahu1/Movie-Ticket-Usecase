@@ -18,7 +18,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class HeroComponent implements OnInit, OnDestroy {
+export class HeroComponent {
    images = [
       "https://i.imgur.com/xcb5Q.jpg",
       "https://i0.wp.com/www.heyuguys.com/images/2010/06/Inception-Banner-4.jpg",
@@ -32,34 +32,6 @@ export class HeroComponent implements OnInit, OnDestroy {
 
    ]
 
-  currentSlideIndex: number = 0;
-  slideInterval: any;
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.startSlideTimer();
-  }
-
-  ngOnDestroy(): void {
-    this.stopSlideTimer();
-  }
-
-  startSlideTimer(): void {
-    this.slideInterval = setInterval(() => {
-      this.nextSlide();
-    }, 2000); // Set the interval time (in milliseconds) for sliding to the next image
-  }
-
-  stopSlideTimer(): void {
-    clearInterval(this.slideInterval);
-  }
-
-  nextSlide(): void {
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.images.length;
-  }
-
-  previousSlide(): void {
-    this.currentSlideIndex = (this.currentSlideIndex - 1 + this.images.length) % this.images.length;
-  }
+   image:string = this.images[0];
+  
 }

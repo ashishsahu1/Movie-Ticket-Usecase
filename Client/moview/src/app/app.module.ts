@@ -14,6 +14,8 @@ import { MovieCardComponent } from './Components/movie-card/movie-card.component
 import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { RegisterComponent } from './Pages/register/register.component';
+import { OtherSectionsComponent } from './Components/other-sections/other-sections.component';
+import { PostersliderComponent } from './Components/posterslider/posterslider.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { RegisterComponent } from './Pages/register/register.component';
     MovieCardComponent,
     LoginComponent,
     SignupComponent,
-    RegisterComponent
+    RegisterComponent,
+    OtherSectionsComponent,
+    PostersliderComponent
   ],
   imports: [
     BrowserModule,

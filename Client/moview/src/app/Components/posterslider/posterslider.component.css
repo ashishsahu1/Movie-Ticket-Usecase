@@ -1,0 +1,15 @@
+
+.box{
+    height: 10rem;
+    width: 6rem;
+    background-color: aquamarine;
+    margin-right: 2rem;
+}
+
+.owl{
+    /* display: flex; */
+}
+
+section{
+    margin-bottom: 2rem;
+}
