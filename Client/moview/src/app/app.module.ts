@@ -19,6 +19,7 @@ import { OtherSectionsComponent } from './Components/other-sections/other-sectio
 import { PostersliderComponent } from './Components/posterslider/posterslider.component';
 import { FormsModule } from '@angular/forms';
 import { AboutmeComponent } from './Pages/aboutme/aboutme.component';
+import { BooksComponent } from './Components/books/books.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AboutmeComponent } from './Pages/aboutme/aboutme.component';
     RegisterComponent,
     OtherSectionsComponent,
     PostersliderComponent,
-    AboutmeComponent
+    AboutmeComponent,
+    BooksComponent
   ],
   imports: [
     FormsModule,

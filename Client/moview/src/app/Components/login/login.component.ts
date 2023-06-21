@@ -26,6 +26,7 @@ export class LoginComponent {
             console.log(response);
             localStorage.setItem("usertoken",response.token)
             localStorage.setItem("loggeduser",response.existingUser.name)
+            localStorage.setItem("loggeduserdetails",response.existingUser._id)
 
 
             // Handling timer
@@ -53,6 +54,7 @@ export class LoginComponent {
   logout(){
     localStorage.removeItem('usertoken');
     localStorage.removeItem('loggeduser');
+    localStorage.removeItem('loggeduserdetails');
 
     this.router.navigate(['/']);
   }

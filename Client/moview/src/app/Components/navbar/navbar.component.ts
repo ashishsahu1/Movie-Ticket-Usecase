@@ -22,6 +22,7 @@ export class NavbarComponent {
   logOut(){
     localStorage.removeItem('usertoken');
     localStorage.removeItem('loggeduser');
+    localStorage.removeItem('loggeduserdetails');
     this.router.navigate(['/']);
   }
 }
