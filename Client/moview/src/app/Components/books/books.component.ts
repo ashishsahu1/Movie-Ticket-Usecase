@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-books',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
-
+  @Input() bookId = "";
 }

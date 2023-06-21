@@ -8,13 +8,13 @@
             </div>
         </div>
         <div class="profile-text">
-            <h3>Name Here</h3>
-            <h4>Email id here</h4>
+            <h3>{{user.getUser.name}}</h3>
+            <h4>{{user.getUser.email}}</h4>
         </div>
         <div class="profile-bookings">
-            <app-books/>
-            <app-books />
-            <app-books />
+            <div *ngFor="let book of user.getUser.bookings" class="profile-booking">
+                <app-books [bookId]="book" />
+            </div>
         </div>
     </div>
 </div>
