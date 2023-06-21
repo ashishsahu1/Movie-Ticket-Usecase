@@ -36,6 +36,6 @@ movierouter.get("/", getAllMovies);
 movierouter.post("/addmovie", addMovies);
 movierouter.get("/search", searchMovies);
 movierouter.delete("/:id", deleteMovie);
-movierouter.get("/:id",getMoviesById);
+movierouter.get("/:id", getMoviesById);
 
 export default movierouter;
