@@ -7,9 +7,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">HOME</a>
-                </li>
+                <div *ngIf="isLoggedIn == true">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/home">HOME</a>
+                    </li>
+                </div>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">LINK</a>
                 </li>
@@ -17,9 +20,19 @@
 
 
             <ul class="navbar-nav  mb-2 mb-lg-0 d-flex">
-                <li class="nav-item btn">
-                    <a class="nav-link" href="#">SIGN-IN</a>
-                </li>
+
+                <div *ngIf="isLoggedIn == true; else elseBlock">
+                    <li class="nav-item btn">
+                        <a class="nav-link" (click)="logOut()" href="/">LOGOUT</a>
+                    </li>
+                </div>
+                <ng-template #elseBlock>
+                    <li class="nav-item btn">
+                        <a class="nav-link" href="/auth">LOGIN</a>
+                    </li>
+                </ng-template>
+
+
             </ul>
 
         </div>

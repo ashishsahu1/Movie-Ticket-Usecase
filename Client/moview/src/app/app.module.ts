@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { SignupComponent } from './Components/signup/signup.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { OtherSectionsComponent } from './Components/other-sections/other-sections.component';
 import { PostersliderComponent } from './Components/posterslider/posterslider.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,10 @@ import { PostersliderComponent } from './Components/posterslider/posterslider.co
     PostersliderComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
