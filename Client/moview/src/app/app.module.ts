@@ -18,6 +18,7 @@ import { RegisterComponent } from './Pages/register/register.component';
 import { OtherSectionsComponent } from './Components/other-sections/other-sections.component';
 import { PostersliderComponent } from './Components/posterslider/posterslider.component';
 import { FormsModule } from '@angular/forms';
+import { AboutmeComponent } from './Pages/aboutme/aboutme.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     RegisterComponent,
     OtherSectionsComponent,
-    PostersliderComponent
+    PostersliderComponent,
+    AboutmeComponent
   ],
   imports: [
     FormsModule,

@@ -9,4 +9,25 @@
 
 .navbar{
     background-color: #08070C;
+    /* background-color: #5b37ea; */
+}
+
+.profile-icon{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-icon img{
+    padding: 0;
+    margin: 0;
+    width: 25px;
+    height: auto;
+    transition-duration: 0.5s;
+}
+
+.profile-icon img:hover{
+    background: #ebc49e;
+    border-radius: 20px;
 }

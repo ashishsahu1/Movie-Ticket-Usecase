@@ -11,7 +11,10 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/home">HOME</a>
                     </li>
+
                 </div>
+
+                
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">LINK</a>
@@ -20,6 +23,14 @@
 
 
             <ul class="navbar-nav  mb-2 mb-lg-0 d-flex">
+
+                <div *ngIf="isLoggedIn == true">
+                    <li class="nav-item btn">
+                        <a class="nav-link profile-icon" href="/about">
+                            <img src="https://github.com/ashishsahu1/Movie-Ticket-Usecase/assets/52550558/2120e5e0-6909-43af-96e5-35fabb049719" alt="" srcset="">
+                        </a>
+                    </li>
+                </div>
 
                 <div *ngIf="isLoggedIn == true; else elseBlock">
                     <li class="nav-item btn">
