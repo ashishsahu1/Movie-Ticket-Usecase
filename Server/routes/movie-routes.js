@@ -5,6 +5,7 @@ import {
   getAllMovies,
   searchMovies,
   deleteMovie,
+  getMoviesById,
 } from "../controllers/movie-controller";
 
 import * as dotenv from "dotenv";
@@ -35,5 +36,6 @@ movierouter.get("/", getAllMovies);
 movierouter.post("/addmovie", addMovies);
 movierouter.get("/search", searchMovies);
 movierouter.delete("/:id", deleteMovie);
+movierouter.get("/:id",getMoviesById);
 
 export default movierouter;

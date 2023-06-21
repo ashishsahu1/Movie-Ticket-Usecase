@@ -143,3 +143,21 @@ export const deleteUser = async (req, res, next) => {
       .json({ error: "An error occurred while deleting the user" });
   }
 };
+
+export const getUserById = async (req, res, next) => {
+  const userId = req.params.id;
+
+  try {
+    const getUser = await User.findById(userId);
+
+    if (!getUser) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json({getUser});
+  } catch (err) {
+    res
+      .status(500)
+      .json({ error: "An error occurred while getting the user" });
+  }
+};
