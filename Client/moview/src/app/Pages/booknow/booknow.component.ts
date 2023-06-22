@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-booknow',
@@ -10,52 +11,75 @@ export class BooknowComponent {
 
   seats: { selected: boolean }[] = [];
   selectedSeats: number[] = [];
-  totalSeats:number = 0;
+  totalSeats: number = 0;
 
-  movie:any;
+  movie: any;
   loggedUser = localStorage.getItem('loggeduserdetails');
+  movieData: any;
 
   ngOnInit(): void {
     // Retrieve the movie data from the route parameters
     this.route.params.subscribe(params => {
       this.movie = params['movieData'];
     });
+
+    const url = `http://localhost:5000/api/movie/${this.movie}`
+    this.http.get(url).subscribe(
+      {
+        next: response => {
+          console.log(response);
+          this.movieData = response;
+        },
+        error: error => {
+          console.log(error);
+        }
+      }
+    )
+
+    setTimeout(() => {
+      this.totalSeats = this.movieData.movie['quantity'];
+      // this.totalSeats = 10; // Change this value based on your requirement
+      for (let i = 0; i < this.totalSeats; i++) {
+        this.seats.push({ selected: false });
+      }
+    }, 1000);
   }
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
     // Initialize the seats array
-    this.totalSeats = 30; // Change this value based on your requirement
-    for (let i = 0; i < this.totalSeats; i++) {
-      this.seats.push({ selected: false });
-    }
+
   }
 
   updateSelectedSeats(): void {
     this.selectedSeats = [];
     this.seats.forEach((seat, index) => {
       if (seat.selected) {
-        this.selectedSeats.push(index );
+        this.selectedSeats.push(index);
       }
     });
   }
 
   bookSeats(): void {
 
-    if(!this.loggedUser){
+    if (!this.loggedUser) {
       alert("User error, Try login again")
     }
-    if(!this.movie){
+    if (!this.movie) {
       alert("Movie error, Try after sometimes")
     }
-    if(this.loggedUser && this.movie){
-      console.log('Selected seats:', this.selectedSeats);
-      // Perform further operations with the selected seats
-      console.log("User : ",this.loggedUser);
-      console.log("Movie : ",this.movie);
+    const booking = {
+      "movieId": this.loggedUser,
+      "userId": this.movie,
+      "tickets": this.selectedSeats.length,
+      "seatsbooked": this.selectedSeats
     }
-    
+    if (this.loggedUser && this.movie) {
+      console.log(booking);
+      // console.log(this.movieData.movie.quantity)
+    }
+
 
 
   }
-  
+
 }

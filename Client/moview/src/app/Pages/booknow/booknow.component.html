@@ -3,11 +3,11 @@
     <h2>Book Your Seats <span>Now</span></h2>
     <div class="movie-details mt-5 d-flex">
         <div class="poster p-2">
-            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/02/the-flash-ezra-miller-social-feature.jpg" alt="" srcset="">
+            <img [src]="movieData.movie.movieposter" alt="" srcset="">
         </div>
         <div class="txts p-2">
-            <h4>Movie Name</h4>
-            <p>Description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, minima! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, facere?</p>
+            <h4>{{movieData.movie.moviename}}</h4>
+            <p>{{movieData.movie.moviedesc}}</p>
         </div>
     </div>
 
@@ -17,6 +17,26 @@
                 <input class="chk-inp" type="checkbox" [(ngModel)]="seat.selected" (change)="updateSelectedSeats()"> {{ i }}
             </label>
         </div>
+    </div>
+
+    <div class="price mt-5 mb-5">
+        <table class="table-responsive-xl">
+            <thead>
+                <tr>
+                    <th scope="col">Ticket price</th>
+                    <th scope="col">No of seats</th>
+                    <th scope="col">Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rs {{movieData.movie.price}}</td>
+                    <td>{{selectedSeats.length}}</td>
+                    <td><h4>Rs {{movieData.movie.price * selectedSeats.length}}</h4></td>
+                </tr>
+            </tbody>
+        </table>
+        
     </div>
     <button class="btn btnn btn-primary" (click)="bookSeats()">Book Tickets</button>
 </section>

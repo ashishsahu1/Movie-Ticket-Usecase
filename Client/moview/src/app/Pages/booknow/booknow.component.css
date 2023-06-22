@@ -79,6 +79,22 @@ section h2 span{
     background-color: #FD8815;
 }
 
+.price{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    width: 70%;
+    height: auto;
+}
+
+thead th{
+    font-weight: 200;
+}
+
 @media only screen and (max-width: 780px){
     .movie-details{
         flex-wrap: wrap;
