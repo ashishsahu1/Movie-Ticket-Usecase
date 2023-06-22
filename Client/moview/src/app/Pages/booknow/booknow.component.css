@@ -1,0 +1,89 @@
+section{
+    color: #fff;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h2{
+    color: #6D3EFE;
+}
+
+section h2 span{
+    color: #FD8815;
+}
+
+.movie-details{
+    width: 80%;
+    height: 12rem;
+    /* background-color: beige; */
+    
+}
+
+.movie-details .poster{
+    width: 35rem;
+    height: 12rem;
+    
+}
+
+.movie-details .poster img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.movie-details .txts h4{
+    font-weight: 500;
+}
+
+.movie-details .txts p {
+    font-weight: 200;
+}
+
+.seats-grid{
+    display: flex;
+    padding: 1rem;
+    width: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.seats-grid label{
+    margin: 0.5rem;
+    font-weight: 500;
+    color: #FD8815;
+}
+
+.chk{
+    background-color: #6D3EFE;
+    border-radius: 30px;
+    margin: 0.5rem;
+}
+
+.chk-label input[type=checkbox]{
+    accent-color: #6D3EFE;
+    background-color: #000000;
+}
+
+.chk-label input[type=checkbox]:checked {
+    background-color: #6D3EFE;
+}
+
+.chk-inp{
+    color: #6D3EFE;
+}
+
+.btnn{
+    background-color: #FD8815;
+}
+
+@media only screen and (max-width: 780px){
+    .movie-details{
+        flex-wrap: wrap;
+        height: auto;
+    }
+}
+
+

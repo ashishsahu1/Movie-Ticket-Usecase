@@ -20,6 +20,7 @@ import { PostersliderComponent } from './Components/posterslider/posterslider.co
 import { FormsModule } from '@angular/forms';
 import { AboutmeComponent } from './Pages/aboutme/aboutme.component';
 import { BooksComponent } from './Components/books/books.component';
+import { BooknowComponent } from './Pages/booknow/booknow.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BooksComponent } from './Components/books/books.component';
     OtherSectionsComponent,
     PostersliderComponent,
     AboutmeComponent,
-    BooksComponent
+    BooksComponent,
+    BooknowComponent
   ],
   imports: [
     FormsModule,

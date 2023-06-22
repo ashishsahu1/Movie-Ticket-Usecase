@@ -1,0 +1,22 @@
+<app-navbar/>
+<section class="container">
+    <h2>Book Your Seats <span>Now</span></h2>
+    <div class="movie-details mt-5 d-flex">
+        <div class="poster p-2">
+            <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2023/02/the-flash-ezra-miller-social-feature.jpg" alt="" srcset="">
+        </div>
+        <div class="txts p-2">
+            <h4>Movie Name</h4>
+            <p>Description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, minima! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, facere?</p>
+        </div>
+    </div>
+
+    <div class="seats-grid">
+        <div class="chk" *ngFor="let seat of seats; let i = index">
+            <label class="chk-label">
+                <input class="chk-inp" type="checkbox" [(ngModel)]="seat.selected" (change)="updateSelectedSeats()"> {{ i }}
+            </label>
+        </div>
+    </div>
+    <button class="btn btnn btn-primary" (click)="bookSeats()">Book Tickets</button>
+</section>

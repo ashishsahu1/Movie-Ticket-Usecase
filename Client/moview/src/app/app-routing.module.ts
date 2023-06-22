@@ -5,6 +5,7 @@ import { AuthComponent } from './Pages/auth/auth.component';
 import { LandingComponent } from './Pages/landing/landing.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { AboutmeComponent } from './Pages/aboutme/aboutme.component';
+import { BooknowComponent } from './Pages/booknow/booknow.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:'auth',component:AuthComponent},
   {path:'register',component:RegisterComponent},
   {path:'',component:LandingComponent},
-  {path:'about',component:AboutmeComponent}
+  {path:'about',component:AboutmeComponent},
+  {path:'book/:movieData',component:BooknowComponent}
 ];
 
 @NgModule({
