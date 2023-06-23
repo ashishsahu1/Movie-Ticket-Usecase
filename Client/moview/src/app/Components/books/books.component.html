@@ -1,17 +1,8 @@
-
-<!-- <div class="card" style="width: 18rem;">
-    <img [src]="movieData.movieposter" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div> -->
-
 <div class="bookings">
-    {{bookingData.booking._id}}
-    <div class="tickets">
+    <!-- {{bookingData.booking._id}} -->
+    <img [src]="movieData.movie.movieposter" alt="poster" srcset="">
+    <h6 class="mt-2">{{movieData.movie.moviename}}</h6>
+    <div class="tickets d-flex">
         <div *ngFor="let item of bookingData.booking.seatsbooked" class="ticket">
             {{item}}
         </div>

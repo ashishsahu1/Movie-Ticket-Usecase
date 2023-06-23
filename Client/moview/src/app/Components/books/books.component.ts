@@ -46,11 +46,15 @@ export class BooksComponent {
     )
   }
 
-  async ngOnInit(){
-    await this.getBookingData();
+  ngOnInit(){
+    this.getBookingData();
+    setTimeout(()=>{
+      this.getMovieData();
+    },1000)
+    
     
     // getting movie data too
-    await this.getMovieData();
+    
 
   }
 }

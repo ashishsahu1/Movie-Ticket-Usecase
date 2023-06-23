@@ -10,15 +10,11 @@
 
 .about-page .ct{
     min-width: 20rem; 
-    width:50%;
+    /* background-color: azure; */
+    /* min-width: 50rem; */
+    width:auto;
     border-radius: 30px;
-    /* From https://css.glass */
-        background: rgba(46, 21, 70, 0.05);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(24, 10, 37, 0.075);
+
 }
 
 .profile-photo{
@@ -55,4 +51,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (max-width: 650px){
+
+    .ct{
+        margin-top: 5rem;
+    }
+    .profile-bookings{
+        flex-wrap: wrap;
+    }
 }
