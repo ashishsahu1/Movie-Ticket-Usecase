@@ -95,6 +95,15 @@ thead th{
     font-weight: 200;
 }
 
+
+.ds{
+    background-color: #FD8815;
+    border-radius: 30px;
+}
+
+.ds input{
+    visibility: hidden;
+}
 @media only screen and (max-width: 780px){
     .movie-details{
         flex-wrap: wrap;

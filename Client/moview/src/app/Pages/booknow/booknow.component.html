@@ -13,9 +13,18 @@
 
     <div class="seats-grid">
         <div class="chk" *ngFor="let seat of seats; let i = index">
-            <label class="chk-label">
-                <input class="chk-inp" type="checkbox" [(ngModel)]="seat.selected" (change)="updateSelectedSeats()"> {{ i }}
-            </label>
+            <div *ngIf="isSeatAvail(i); else elseBlock">
+                <label disabled class="chk-label ds">
+                    <input class="chk-inp" disabled type="checkbox" [(ngModel)]="seat.selected" (change)="updateSelectedSeats()"> {{ i }}
+                </label>
+                <!-- <p>Na</p> -->
+            </div>
+            <ng-template #elseBlock>
+                <label class="chk-label">
+                    <input class="chk-inp" type="checkbox" [(ngModel)]="seat.selected" (change)="updateSelectedSeats()"> {{ i }}
+                </label>
+            </ng-template>
+            
         </div>
     </div>
 

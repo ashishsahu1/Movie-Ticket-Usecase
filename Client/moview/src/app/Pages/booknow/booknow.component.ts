@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { response } from 'express';
 
 @Component({
   selector: 'app-booknow',
@@ -16,6 +17,14 @@ export class BooknowComponent {
   movie: any;
   loggedUser = localStorage.getItem('loggeduserdetails');
   movieData: any;
+
+  isSeatAvail(i:number){
+    if(this.movieData.movie['seats'][i] !== true){
+      return false;
+    }else{
+      return true;
+    }
+  }
 
   ngOnInit(): void {
     // Retrieve the movie data from the route parameters
@@ -67,19 +76,28 @@ export class BooknowComponent {
     if (!this.movie) {
       alert("Movie error, Try after sometimes")
     }
+
     const booking = {
-      "movieId": this.loggedUser,
-      "userId": this.movie,
+      "movieId": this.movie,
+      "userId": this.loggedUser,
       "tickets": this.selectedSeats.length,
       "seatsbooked": this.selectedSeats
     }
     if (this.loggedUser && this.movie) {
       console.log(booking);
-      // console.log(this.movieData.movie.quantity)
+
+      this.http.post<any>('http://localhost:5000/api/booking/addBooking',booking)
+        .subscribe({
+          next:response=>{
+            console.log(response);
+            alert("Booking added")
+          },
+          error:error=>{
+            alert("Something went wrong");
+          }
+        })
+      
     }
-
-
-
   }
 
 }
