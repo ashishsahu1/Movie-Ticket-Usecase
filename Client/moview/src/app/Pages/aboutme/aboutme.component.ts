@@ -13,6 +13,9 @@ export class AboutmeComponent {
   user:any = "";
 
   constructor(private http: HttpClient) { }
+
+  
+
   ngOnInit(){
     const url = `http://localhost:5000/api/user/${localStorage.getItem('loggeduserdetails')}`
     this.http.get(url).subscribe(
@@ -27,5 +30,12 @@ export class AboutmeComponent {
       }
     )
     console.log(this.user);
+  }
+
+  handleDelDone(value:boolean){
+    setTimeout(() => {
+      console.log("here")
+      this.ngOnInit();
+    }, 2000);
   }
 }

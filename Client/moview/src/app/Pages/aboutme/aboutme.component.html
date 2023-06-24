@@ -13,7 +13,7 @@
         </div>
         <div class="profile-bookings">
             <div *ngFor="let book of user.getUser.bookings" class="profile-booking">
-                <app-books [bookId]="book" />
+                <app-books (deletionDone)="handleDelDone($event)" [bookId]="book" />
             </div>
         </div>
     </div>

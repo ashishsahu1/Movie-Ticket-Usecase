@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-books',
@@ -51,10 +51,28 @@ export class BooksComponent {
     setTimeout(()=>{
       this.getMovieData();
     },1000)
-    
-    
-    // getting movie data too
-    
-
   }
+
+  @Output() deletionDone = new EventEmitter<boolean>();
+  isDeleted:boolean = false;
+
+  deleteHandler(){
+    // console.log(this.bookingData.booking._id)
+    const url = `http://localhost:5000/api/booking/delete/${this.bookingData.booking._id}`;
+    this.http.delete(url).subscribe(
+      {
+        next:response=>{
+          alert(`Booking deleted Successfully`)
+        },
+        error:error=>{
+          console.log(error);
+        }
+      }
+    )
+    this.isDeleted = true;
+      this.deletionDone.emit(this.isDeleted);
+  }
+
+  // emitter
+
 }
