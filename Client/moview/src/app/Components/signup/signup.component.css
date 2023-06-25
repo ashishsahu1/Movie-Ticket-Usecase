@@ -1,0 +1,23 @@
+input {
+    border-color: #FD8815;
+}
+
+.btn {
+    background-color: #FD8815;
+    color: #fff;
+    font-weight: 600;
+}
+
+h1 {
+    display: inline;
+    background: hsla(30, 98%, 54%, 1);
+
+    background: linear-gradient(170deg, hsla(30, 98%, 54%, 1) 40%, hsla(255, 99%, 62%, 1) 50%);
+
+    background: -moz-linear-gradient(170deg, hsla(30, 98%, 54%, 1) 40%, hsla(255, 99%, 62%, 1) 50%);
+
+    background: -webkit-linear-gradient(170deg, hsla(30, 98%, 54%, 1) 40%, hsla(255, 99%, 62%, 1) 50%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FD8815", endColorstr="#6D3EFE", GradientType=1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

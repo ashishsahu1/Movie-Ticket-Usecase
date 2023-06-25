@@ -1,19 +1,21 @@
 <div class="form-main container-sm">
-    <h1 class="text-light mb-5">Signup</h1>
-    <form>
+    <div class="mb-5">
+        <h1 class="text-light mb-5">Sign up</h1>
+    </div>
+    <form (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <label for="email" class="form-label text-light">Email address</label>
-            <input type="email" class="form-control text-bg-dark" id="email" aria-describedby="emailHelp">
+            <input type="email" name="email" [(ngModel)]="formData.email" class="form-control text-bg-dark" id="email" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text text-light-emphasis">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
             <label for="name" class="form-label text-light">Name</label>
-            <input type="text" class="form-control text-bg-dark" id="name" aria-describedby="nameHelp">
+            <input type="text" name="name" [(ngModel)]="formData.name" class="form-control text-bg-dark" id="name" aria-describedby="nameHelp">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label text-light">Password</label>
-            <input type="password" class="form-control text-bg-dark" id="password">
+            <input name="password" [(ngModel)]="formData.password" type="password" class="form-control text-bg-dark" id="password">
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Signup</button>
+        <button type="submit" class="btn btn-lg btn-warning mt-3">Signup</button>
     </form>
 </div>

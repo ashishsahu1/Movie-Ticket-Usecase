@@ -22,3 +22,12 @@ input{
     
     border-color: #FD8815;
 }
+
+.sign-up{
+    color: #ffffffc6;
+}
+
+.sign-up a{
+    text-decoration: none;
+    color: #FD8815;
+}
