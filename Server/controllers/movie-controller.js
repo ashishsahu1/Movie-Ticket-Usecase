@@ -57,14 +57,14 @@ export const searchMovies = async (req, res, next) => {
     queryObj.moviename = { $regex: moviename, $options: "i" };
   }
 
-  let myData = {};
+  let movies = {};
   try {
-    myData = await Movie.find(queryObj);
+    movies = await Movie.find(queryObj);
   } catch (err) {
     return console.log(err);
   }
 
-  res.status(200).json({ myData });
+  res.status(200).json({ movies });
 };
 
 export const deleteMovie = async (req, res, next) => {

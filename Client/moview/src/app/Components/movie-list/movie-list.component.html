@@ -1,5 +1,23 @@
-<div class="container-xxl justify-content-center d-flex flex-wrap">
-    <div *ngFor="let movie of allMovie.movies; index as i;" >
-        <app-movie-card [movie]="movie" />
+
+<div class="search-input">
+    <input (change)="searchKeyChange()" [(ngModel)]="searchkey" class="form-control form-control-lg text-bg-dark" type="text" placeholder="Search your movie.."
+        aria-label=".form-control-lg example">
+</div>
+
+<div *ngIf="searchkey == ''; else elseBlock">
+    <div class="container-xxl justify-content-center d-flex flex-wrap">
+        <div *ngFor="let movie of allMovie.movies; index as i;">
+            <app-movie-card [movie]="movie" />
+        </div>
     </div>
 </div>
+<ng-template #elseBlock>
+    <div class="container-xxl justify-content-center d-flex flex-wrap">
+        <div *ngFor="let movie of allSearchedMovie.movies; index as i;">
+            <app-movie-card [movie]="movie" />
+        </div>
+    </div>
+</ng-template>
+
+
+
