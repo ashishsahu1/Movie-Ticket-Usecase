@@ -1,4 +1,13 @@
+
+---
+<br>
+<br>
+<br>
+
 ![MOVIEW](https://github.com/ashishsahu1/Movie-Ticket-Usecase/assets/52550558/26e76fae-4eb5-4a0b-aa39-7eb82599267b)
+
+<br>
+<br>
 
 ---
 Welcome👋🏻 to the world of Movie Booking App🍿, an innovative application designed to enhance your movie-going experience. In this fast-paced digital era, where convenience is paramount, our app provides a seamless platform for users to register, login, and easily search for the latest released movies. With just a few taps, users can secure their desired movie tickets and enjoy a hassle-free booking process.
