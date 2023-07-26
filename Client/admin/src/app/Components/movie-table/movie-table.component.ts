@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { uri } from 'src/app/uri';
 @Component({
   selector: 'app-movie-table',
   templateUrl: './movie-table.component.html',

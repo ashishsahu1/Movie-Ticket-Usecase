@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { uri } from 'src/app/uri';
 @Component({
   selector: 'app-movie-action-list',
   templateUrl: './movie-action-list.component.html',
@@ -16,7 +16,7 @@ export class MovieActionListComponent {
 
   delBtnHandler(){
     console.log(this.movieId)
-    const url = `http://localhost:5000/api/movie/${this.movieId}`;
+    const url = uri[0]+`api/movie/${this.movieId}`;
     this.http.delete(url).subscribe(
       {
         next:response=>{

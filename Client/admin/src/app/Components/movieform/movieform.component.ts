@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { uri } from 'src/app/uri';
 @Component({
   selector: 'app-movieform',
   templateUrl: './movieform.component.html',
@@ -21,7 +21,7 @@ export class MovieformComponent {
   constructor(private http: HttpClient) { }
 
   onSubmit(){
-    this.http.post<any>('http://localhost:5000/api/movie/addmovie', this.formData).subscribe({
+    this.http.post<any>(uri[0]+'api/movie/addmovie', this.formData).subscribe({
       next:response=>{
         console.log(response);
         this.formData.moviename = '';

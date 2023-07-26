@@ -1,7 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { response } from 'express';
-
+import { uri } from 'src/app/uri';
 @Component({
   selector: 'app-user-action-list',
   templateUrl: './user-action-list.component.html',
@@ -19,7 +19,7 @@ export class UserActionListComponent {
 
   delBtnHandler(){
     console.log(this.userId);
-    const url = `http://localhost:5000/api/user/${this.userId}`;
+    const url = uri[0]+`api/user/${this.userId}`;
     this.http.delete(url).subscribe(
       {
         next:response=>{

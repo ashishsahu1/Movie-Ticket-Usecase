@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { uri } from 'src/app/uri';
 
 @Component({
   selector: 'app-movie-panel',
@@ -19,7 +20,7 @@ export class MoviePanelComponent {
   }
 
   ngOnInit(): void {
-    this.http.get("http://localhost:5000/api/movie").subscribe({
+    this.http.get(uri[0]+'api/movie').subscribe({
       next: response => {
         console.log(response)
         this.allMovie = response;

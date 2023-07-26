@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { response } from 'express';
 import { Observable } from 'rxjs';
 import { UserTableComponent } from 'src/app/Components/user-table/user-table.component';
-
+import { uri } from 'src/app/uri';
 @Component({
   selector: 'app-user-panel',
   templateUrl: './user-panel.component.html',
@@ -39,7 +39,7 @@ export class UserPanelComponent {
   }
 
   ngOnInit(): void {
-    this.http.get("http://localhost:5000/api/user").subscribe({
+    this.http.get(uri[0]+"api/user").subscribe({
       next: response => {
         this.allUsers = response;
       },

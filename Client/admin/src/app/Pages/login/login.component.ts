@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { uri } from 'src/app/uri';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,9 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router:Router) { }
 
+  
   loginHandler = () => {
-    this.http.post<any>('http://localhost:5000/api/user/admin/login', this.loginData)
+    this.http.post<any>(uri[0]+'api/user/admin/login', this.loginData)
       .subscribe(
         {
           next: response => {

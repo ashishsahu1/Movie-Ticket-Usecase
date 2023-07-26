@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { response } from 'express';
-
+import { uri } from 'src/app/uri';
 @Component({
   selector: 'app-userform',
   templateUrl: './userform.component.html',
@@ -20,7 +20,7 @@ export class UserformComponent {
   constructor(private http: HttpClient) { }
 
   onSubmit(){
-    this.http.post<any>('http://localhost:5000/api/user/signup', this.formData).subscribe({
+    this.http.post<any>(uri[0]+'api/user/signup', this.formData).subscribe({
       next:response=>{
         console.log(response);
       },

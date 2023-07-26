@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { KeyValue } from '@angular/common';
-
+import { uri } from 'src/app/uri';
 
 @Component({
   selector: 'app-bookinglist',
@@ -22,7 +22,7 @@ export class BookinglistComponent {
   ngOnInit(){
     for (let i = 0; i < this.bookinglist.length; i++) {
       const element = this.bookinglist[i];
-        this.http.get<any>(`http://localhost:5000/api/booking/${element}`).subscribe({
+        this.http.get<any>(uri[0]+`api/booking/${element}`).subscribe({
         next: response=>{
           this.allBookings.push(response);
           console.log(response);

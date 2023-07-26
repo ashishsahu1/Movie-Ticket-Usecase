@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input,Output } from '@angular/core';
 import { response } from 'express';
-
+import { uri } from 'src/app/uri';
 @Component({
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
