@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { uri } from 'src/app/uri';
 
 @Component({
   selector: 'app-books',
@@ -16,7 +17,7 @@ export class BooksComponent {
 
   getMovieData = async () =>{
     console.log(this.movieId);
-    const movieurl = `http://localhost:5000/api/movie/${this.movieId}`
+    const movieurl = uri[0]+`api/movie/${this.movieId}`
     this.http.get(movieurl).subscribe(
       {
         next:response=>{
@@ -31,7 +32,7 @@ export class BooksComponent {
   } 
 
   getBookingData = async ()=>{
-    const url = `http://localhost:5000/api/booking/${this.bookId}`
+    const url = uri[0]+`api/booking/${this.bookId}`
     this.http.get(url).subscribe(
       {
         next:response=>{
@@ -58,7 +59,7 @@ export class BooksComponent {
 
   deleteHandler(){
     // console.log(this.bookingData.booking._id)
-    const url = `http://localhost:5000/api/booking/delete/${this.bookingData.booking._id}`;
+    const url = uri[0]+`api/booking/delete/${this.bookingData.booking._id}`;
     this.http.delete(url).subscribe(
       {
         next:response=>{

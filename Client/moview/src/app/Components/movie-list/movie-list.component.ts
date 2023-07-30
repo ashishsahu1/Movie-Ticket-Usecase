@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { response } from 'express';
+import { uri } from 'src/app/uri';
 
 @Component({
   selector: 'app-movie-list',
@@ -14,7 +15,7 @@ export class MovieListComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(){
-    this.http.get("http://localhost:5000/api/movie").subscribe({
+    this.http.get(uri[0]+"api/movie").subscribe({
       next: response => {
         console.log(response)
         this.allMovie = response;
@@ -42,7 +43,7 @@ export class MovieListComponent {
     // })
     // },1000)
 
-    const url = `http://localhost:5000/api/movie/search?term=${this.searchkey}`;
+    const url = uri[0]+`api/movie/search?term=${this.searchkey}`;
       console.log(url);
       this.http.get(url).subscribe({
         next:response => {

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { response } from 'express';
+import { uri } from 'src/app/uri';
+
 
 @Component({
   selector: 'app-booknow',
@@ -32,7 +34,7 @@ export class BooknowComponent {
       this.movie = params['movieData'];
     });
 
-    const url = `http://localhost:5000/api/movie/${this.movie}`
+    const url = uri[0]+`api/movie/${this.movie}`
     this.http.get(url).subscribe(
       {
         next: response => {
@@ -86,7 +88,7 @@ export class BooknowComponent {
     if (this.loggedUser && this.movie) {
       console.log(booking);
 
-      this.http.post<any>('http://localhost:5000/api/booking/addBooking',booking)
+      this.http.post<any>(uri[0]+'api/booking/addBooking',booking)
         .subscribe({
           next:response=>{
             console.log(response);
